@@ -11,7 +11,6 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    HomeViewController homeViewController = Get.put(HomeViewController());
     return Scaffold(
       appBar: AppBar(
         title: Text("Get Post Api"),
@@ -20,47 +19,9 @@ class HomeView extends StatelessWidget {
       body: Column(
         children: [
           Expanded(
-              child:
-
-                  // FutureBuilder(
-                  //   future: getPostApi(),
-                  //   builder: (context, snapshot) {
-                  //     if (snapshot.hasData) {
-                  //       // return CircularProgressIndicator();
-                  //       return ListView.builder(
-                  //         itemCount: postList.length,
-                  //         itemBuilder: (context, index) {
-                  //           return Column(
-                  //             children: [
-                  //               Text(
-                  //                 postList[index].title.toString(),
-                  //                 style: TextStyle(fontSize: 30, color: Colors.black),
-                  //               ),
-                  //             ],
-                  //           );
-                  //         },
-                  //       );
-                  //     } else {
-                  //       return CircularProgressIndicator();
-                  //       // return ListView.builder(
-                  //       //   itemCount: postList.length,
-                  //       //   itemBuilder: (context, index) {
-                  //       //     return Column(
-                  //       //       children: [
-                  //       //         Text(
-                  //       //           postList[index].title.toString(),
-                  //       //           style: TextStyle(fontSize: 30, color: Colors.black),
-                  //       //         ),
-                  //       //       ],
-                  //       //     );
-                  //       //   },
-                  //       // );
-                  //     }
-                  //   },
-                  // ),
-                  FutureBuilder(
+              child: FutureBuilder(
             future: getPostApi(),
-            builder: (context,   snapshot) {
+            builder: (context, snapshot) {
               if (snapshot.hasData) {
                 return ListView.builder(
                   itemCount: postList.length,
