@@ -1,7 +1,9 @@
 import 'dart:io';
 
 import 'package:api_integration/view/HomeView/home_view.dart';
+import 'package:api_integration/view/LoginView/LoginView.dart';
 import 'package:api_integration/view/PhotosView/PhotosView.dart';
+import 'package:api_integration/view/PutApi/PutApi.dart';
 import 'package:api_integration/view/SignUpView/SignUpView.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -35,7 +37,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
           ),
-          home: SignUpView(),
+          home: PutApi(),
         );
       },
     );

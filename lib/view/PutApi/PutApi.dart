@@ -1,21 +1,23 @@
-import 'package:api_integration/controller/SignUpViewController/SignUpViewController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SignUpView extends StatelessWidget {
-  const SignUpView({super.key});
+import '../../controller/PutApiController/PutApiController.dart';
+
+class PutApi extends StatelessWidget {
+  const PutApi({super.key});
 
   @override
   Widget build(BuildContext context) {
-    SignUpViewController signUpViewController = Get.put(SignUpViewController());
+    PutApiController putApiController = Get.put(PutApiController());
+
     return Scaffold(
         appBar: AppBar(
-          title: Text("SignUp Post Api"),
+          title: Text("Put Api"),
           centerTitle: true,
         ),
         body: SingleChildScrollView(
             child: Form(
-          key: signUpViewController.formKey,
+          key: putApiController.formKey,
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Column(
@@ -24,7 +26,7 @@ class SignUpView extends StatelessWidget {
               children: [
                 TextFormField(
                   style: TextStyle(color: Colors.black),
-                  controller: signUpViewController.emailController,
+                  controller: putApiController.emailController,
                   decoration: InputDecoration(hintText: "Email"),
                 ),
                 const SizedBox(
@@ -32,7 +34,7 @@ class SignUpView extends StatelessWidget {
                 ),
                 TextFormField(
                   style: TextStyle(color: Colors.black),
-                  controller: signUpViewController.passwordController,
+                  controller: putApiController.passwordController,
                   decoration: InputDecoration(hintText: "Password"),
                 ),
                 const SizedBox(
@@ -41,11 +43,11 @@ class SignUpView extends StatelessWidget {
                 Obx(() {
                   return GestureDetector(
                     onTap: () {
-                      signUpViewController.SignUp(
-                          signUpViewController.emailController.text,
-                          signUpViewController.passwordController.text);
+                      putApiController.putApi(
+                          putApiController.emailController.text.toString(),
+                          putApiController.passwordController.text.toString());
                     },
-                    child: signUpViewController.loading.value
+                    child: putApiController.loading.value
                         ? CircularProgressIndicator()
                         : Container(
                             height: 50,
@@ -55,7 +57,7 @@ class SignUpView extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(30)),
                             child: const Center(
                               child: Text(
-                                "SignUp",
+                                "Update",
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 25,

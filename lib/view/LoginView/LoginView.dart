@@ -1,21 +1,23 @@
-import 'package:api_integration/controller/SignUpViewController/SignUpViewController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SignUpView extends StatelessWidget {
-  const SignUpView({super.key});
+import '../../controller/LoginViewController/LoginViewController.dart';
+
+class LoginView extends StatelessWidget {
+  const LoginView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    SignUpViewController signUpViewController = Get.put(SignUpViewController());
+    LoginViewController loginViewController = Get.put(LoginViewController());
+  
     return Scaffold(
         appBar: AppBar(
-          title: Text("SignUp Post Api"),
+          title: Text("Login Post Api"),
           centerTitle: true,
         ),
         body: SingleChildScrollView(
             child: Form(
-          key: signUpViewController.formKey,
+          key: loginViewController.formKey,
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Column(
@@ -24,7 +26,7 @@ class SignUpView extends StatelessWidget {
               children: [
                 TextFormField(
                   style: TextStyle(color: Colors.black),
-                  controller: signUpViewController.emailController,
+                  controller: loginViewController.emailController,
                   decoration: InputDecoration(hintText: "Email"),
                 ),
                 const SizedBox(
@@ -32,7 +34,7 @@ class SignUpView extends StatelessWidget {
                 ),
                 TextFormField(
                   style: TextStyle(color: Colors.black),
-                  controller: signUpViewController.passwordController,
+                  controller: loginViewController.passwordController,
                   decoration: InputDecoration(hintText: "Password"),
                 ),
                 const SizedBox(
@@ -41,11 +43,11 @@ class SignUpView extends StatelessWidget {
                 Obx(() {
                   return GestureDetector(
                     onTap: () {
-                      signUpViewController.SignUp(
-                          signUpViewController.emailController.text,
-                          signUpViewController.passwordController.text);
+                      loginViewController.login(
+                          loginViewController.emailController.text,
+                          loginViewController.passwordController.text);
                     },
-                    child: signUpViewController.loading.value
+                    child: loginViewController.loading.value
                         ? CircularProgressIndicator()
                         : Container(
                             height: 50,
@@ -55,7 +57,7 @@ class SignUpView extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(30)),
                             child: const Center(
                               child: Text(
-                                "SignUp",
+                                "Login",
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 25,
@@ -69,5 +71,6 @@ class SignUpView extends StatelessWidget {
             ),
           ),
         )));
+  
   }
 }
