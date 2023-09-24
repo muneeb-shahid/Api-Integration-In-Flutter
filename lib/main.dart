@@ -5,17 +5,20 @@ import 'package:api_integration/view/LoginView/LoginView.dart';
 import 'package:api_integration/view/PhotosView/PhotosView.dart';
 import 'package:api_integration/view/PutApi/PutApi.dart';
 import 'package:api_integration/view/SignUpView/SignUpView.dart';
+import 'package:api_integration/view/delete%20api/delete%20api.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-class PostHttpOverrides extends HttpOverrides{
+class PostHttpOverrides extends HttpOverrides {
   @override
-  HttpClient createHttpClient(context){
+  HttpClient createHttpClient(context) {
     return super.createHttpClient(context)
-      ..badCertificateCallback = (X509Certificate cert, String host, int port)=> true;
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
   }
 }
+
 void main() async {
   HttpOverrides.global = new PostHttpOverrides();
   runApp(const MyApp());
@@ -33,11 +36,11 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Notepad',
+          title: 'Api Integration',
           theme: ThemeData(
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
           ),
-          home: PutApi(),
+          home: DeleteApi(),
         );
       },
     );

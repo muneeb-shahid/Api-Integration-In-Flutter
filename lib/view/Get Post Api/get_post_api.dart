@@ -78,5 +78,6 @@ class GetPostApi extends StatelessWidget {
         ],
       ),
     );
+ 
   }
 }
