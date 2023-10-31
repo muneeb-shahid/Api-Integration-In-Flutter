@@ -1,16 +1,15 @@
-# api_integration
+# Api Integration
 
-A new Flutter project.
+The "**http**" package to make HTTP requests to remote servers or APIs. 
+It provides functions for sending GET, POST, PUT, PATCH, and DELETE requests. 
+You can set headers and request bodies, handle responses, and decode JSON data.
 
-## Getting Started
+**GET:** Retrieve a resource.
 
-This project is a starting point for a Flutter application.
+**POST:** Create a new resource.
 
-A few resources to get you started if this is your first Flutter project:
+**PUT:** Update an existing resource.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+**PATCH:** Update a portion of an existing resource.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+**DELETE:** Delete an existing resource.
