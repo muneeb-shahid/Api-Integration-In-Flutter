@@ -1,7 +1,7 @@
 import 'dart:convert';
 
+import 'package:api_integration/model/post_model/post_model.dart';
 import 'package:http/http.dart' as http;
-import '../../model/PostModel/post_model.dart';
 
 List<PostModel> postList = [];
 Future<List<PostModel>> getPostApi() async {

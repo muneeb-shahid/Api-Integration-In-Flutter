@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import '../../model/PhotosModel/PhotosModel.dart';
+import '../../model/photos_model/photos_model.dart';
 import 'package:http/http.dart' as http;
 
 List<PhotosModel> photosModel_List = [];

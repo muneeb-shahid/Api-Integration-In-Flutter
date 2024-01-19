@@ -1,19 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:http/http.dart' as http;
+import '../../crud_api/get_api/get_posts_api.dart';
 
-import '../../CRUD Api/Get Api/get_posts_api.dart';
-import '../../controller/HomeViewController/HomeViewController.dart';
-import '../../model/PostModel/post_model.dart';
-
-class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+class GetPostApi extends StatelessWidget {
+  const GetPostApi({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("HomeView"),
+        title: Text("Get Post Api"),
         centerTitle: true,
       ),
       body: Column(
@@ -75,18 +70,14 @@ class HomeView extends StatelessWidget {
                   '${snapshot.error}',
                   style: TextStyle(fontSize: 30, color: Colors.black),
                 );
-
-                // print(
-                //   '${snapshot.error}',
-                // );
               }
 
-              // By default, show a loading spinner.
               return const CircularProgressIndicator();
             },
           )),
         ],
       ),
     );
+ 
   }
 }

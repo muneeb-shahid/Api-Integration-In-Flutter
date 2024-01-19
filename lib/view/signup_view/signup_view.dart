@@ -1,23 +1,21 @@
+import 'package:api_integration/controller/signup_view_controller/signup_view_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../controller/PutApiController/PutApiController.dart';
-
-class PutApi extends StatelessWidget {
-  const PutApi({super.key});
+class SignUpView extends StatelessWidget {
+  const SignUpView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    PutApiController putApiController = Get.put(PutApiController());
-
+    SignUpViewController signUpViewController = Get.put(SignUpViewController());
     return Scaffold(
         appBar: AppBar(
-          title: Text("Put Api"),
+          title: Text("SignUp Post Api"),
           centerTitle: true,
         ),
         body: SingleChildScrollView(
             child: Form(
-          key: putApiController.formKey,
+          key: signUpViewController.formKey,
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Column(
@@ -26,7 +24,7 @@ class PutApi extends StatelessWidget {
               children: [
                 TextFormField(
                   style: TextStyle(color: Colors.black),
-                  controller: putApiController.emailController,
+                  controller: signUpViewController.emailController,
                   decoration: InputDecoration(hintText: "Email"),
                 ),
                 const SizedBox(
@@ -34,7 +32,7 @@ class PutApi extends StatelessWidget {
                 ),
                 TextFormField(
                   style: TextStyle(color: Colors.black),
-                  controller: putApiController.passwordController,
+                  controller: signUpViewController.passwordController,
                   decoration: InputDecoration(hintText: "Password"),
                 ),
                 const SizedBox(
@@ -43,11 +41,11 @@ class PutApi extends StatelessWidget {
                 Obx(() {
                   return GestureDetector(
                     onTap: () {
-                      putApiController.putApi(
-                          putApiController.emailController.text.toString(),
-                          putApiController.passwordController.text.toString());
+                      signUpViewController.SignUp(
+                          signUpViewController.emailController.text,
+                          signUpViewController.passwordController.text);
                     },
-                    child: putApiController.loading.value
+                    child: signUpViewController.loading.value
                         ? CircularProgressIndicator()
                         : Container(
                             height: 50,
@@ -57,7 +55,7 @@ class PutApi extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(30)),
                             child: const Center(
                               child: Text(
-                                "Update",
+                                "SignUp",
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 25,

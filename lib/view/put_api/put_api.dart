@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../controller/LoginViewController/LoginViewController.dart';
+import '../../controller/put_api_controller/put_api_controller.dart';
 
-class LoginView extends StatelessWidget {
-  const LoginView({super.key});
+class PutApi extends StatelessWidget {
+  const PutApi({super.key});
 
   @override
   Widget build(BuildContext context) {
-    LoginViewController loginViewController = Get.put(LoginViewController());
-  
+    PutApiController putApiController = Get.put(PutApiController());
+
     return Scaffold(
         appBar: AppBar(
-          title: Text("Login Post Api"),
+          title: Text("Put Api"),
           centerTitle: true,
         ),
         body: SingleChildScrollView(
             child: Form(
-          key: loginViewController.formKey,
+          key: putApiController.formKey,
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Column(
@@ -26,7 +26,7 @@ class LoginView extends StatelessWidget {
               children: [
                 TextFormField(
                   style: TextStyle(color: Colors.black),
-                  controller: loginViewController.emailController,
+                  controller: putApiController.emailController,
                   decoration: InputDecoration(hintText: "Email"),
                 ),
                 const SizedBox(
@@ -34,7 +34,7 @@ class LoginView extends StatelessWidget {
                 ),
                 TextFormField(
                   style: TextStyle(color: Colors.black),
-                  controller: loginViewController.passwordController,
+                  controller: putApiController.passwordController,
                   decoration: InputDecoration(hintText: "Password"),
                 ),
                 const SizedBox(
@@ -43,11 +43,11 @@ class LoginView extends StatelessWidget {
                 Obx(() {
                   return GestureDetector(
                     onTap: () {
-                      loginViewController.login(
-                          loginViewController.emailController.text,
-                          loginViewController.passwordController.text);
+                      putApiController.putApi(
+                          putApiController.emailController.text.toString(),
+                          putApiController.passwordController.text.toString());
                     },
-                    child: loginViewController.loading.value
+                    child: putApiController.loading.value
                         ? CircularProgressIndicator()
                         : Container(
                             height: 50,
@@ -57,7 +57,7 @@ class LoginView extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(30)),
                             child: const Center(
                               child: Text(
-                                "Login",
+                                "Update",
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 25,
@@ -71,6 +71,5 @@ class LoginView extends StatelessWidget {
             ),
           ),
         )));
-  
   }
 }

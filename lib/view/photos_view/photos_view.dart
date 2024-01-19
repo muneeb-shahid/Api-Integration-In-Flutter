@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../CRUD Api/Get Api/get_photos_api.dart';
+import '../../crud_api/get_api/get_photos_api.dart';
 
 class PhotosView extends StatelessWidget {
   const PhotosView({super.key});
