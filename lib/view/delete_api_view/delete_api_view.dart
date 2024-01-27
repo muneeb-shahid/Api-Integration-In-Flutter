@@ -1,7 +1,6 @@
+import 'package:api_integration/view_model/delete_api_view_model/delete_api_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../controller/DeleteApiController/DeleteApiController.dart';
 
 class DeleteApi extends StatelessWidget {
   const DeleteApi({super.key});
@@ -12,7 +11,7 @@ class DeleteApi extends StatelessWidget {
 
     return Scaffold(
         appBar: AppBar(
-          title: Text("Put Api"),
+          title: const Text("Put Api"),
           centerTitle: true,
         ),
         body: SingleChildScrollView(

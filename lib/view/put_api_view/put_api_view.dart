@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../controller/put_api_controller/put_api_controller.dart';
+import '../../view_model/put_api_view_model/put_api_view_model.dart';
 
 class PutApi extends StatelessWidget {
   const PutApi({super.key});

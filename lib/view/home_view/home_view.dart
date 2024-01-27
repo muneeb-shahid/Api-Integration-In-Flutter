@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
 import '../../crud_api/get_api/get_posts_api.dart';
-import '../../controller/home_view_controller/home_view_controller.dart';
+import '../../view_model/home_view_view_model/home_view_view_model.dart';
 import '../../model/post_model/post_model.dart';
 
 class HomeView extends StatelessWidget {

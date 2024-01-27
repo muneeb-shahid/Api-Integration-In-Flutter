@@ -1,4 +1,4 @@
-import 'package:api_integration/controller/signup_view_controller/signup_view_controller.dart';
+import 'package:api_integration/view_model/signup_view_model/signup_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
